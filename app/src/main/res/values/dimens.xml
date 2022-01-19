@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logo_width">113dp</dimen>
+    <dimen name="logo_height">51dp</dimen>
+    <dimen name="black_logo_top_margin">86dp</dimen>
+    <dimen name="text_message_size">15sp</dimen>
+    <dimen name="editext_text_size">14sp</dimen>
+    <dimen name="buttons_text_size">15sp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+</resources>

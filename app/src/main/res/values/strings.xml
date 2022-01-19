@@ -1,0 +1,153 @@
+<resources>
+    <string name="app_name">TaxiApp</string>
+    <string name="title_activity_main">Map</string>
+
+    <string name="foursquare_client_id">455ATW2OZRYPDW210YRPWTNK01F1RWQU5MLQHWDZ3S1PTYN3</string>
+    <string name="foursquare_client_secret">0HWSZQH4HRVJ4QC2MRZFGN35OBOO4VQEMT3P1URDUCTLQ4VM</string>
+
+    <string name="api_client_id">3</string>
+    <string name="api_client_secret">A5m6AnVyc2c4kOz0PBkKch0rW1kRmYypsATITcUS</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+
+    <!-- Login Screen Strings -->
+
+    <string name="login_hello">Γειά!</string>
+    <string name="login_hello_under">Κανε Διαδρομές με την PICK</string>
+    <string name="login_message_text">Βάλε τον αριθμό του κινητού σου για Είσοδο ή Εγγραφή</string>
+    <string name="login_check_account_btn_text">Επαλήθευση Λογαριασμού</string>
+    <string name="login_or">ή</string>
+    <string name="login_connectWith">Συνδέσου με</string>
+    <string name="login_terms">Δημιουργώντας ένα λογαριασμό, συμφωνείς με τους όρους χρήσης μας</string>
+    <string name="login_no_user_dialog_text">Δεν υπάρχει χρήστης με αυτόν τον αριθμό τηλεφώνου στην πλατφόρμα μας</string>
+    <string name="login_no_user_dialog_retry">ΕΠΑΝΑΛΗΨΗ</string>
+    <string name="login_no_user_dialog_signup">Εγγραφή</string>
+    <string name="login_no_account_text">Δεν έχεις λογαριασμό?</string>
+
+
+    <!-- SignUp Screen Strings -->
+    <string name="signup_message_text">Δημιούργησε το λογαριασμό σου σε ένα λεπτό!</string>
+    <string name="signup_name_hint">Όνομα</string>
+    <string name="signup_surname_hint">Επώνυμο</string>
+    <string name="signup_email_hint">Email</string>
+    <string name="signup_phone_hint">Κινητό</string>
+    <string name="signup_terms_check_text">Έχω διαβάσει και συμφωνώ με τους</string>
+    <string name="signup_terms_button_text">Όρους Χρήσης</string>
+    <string name="signup_policy_check_text">Έχω διαβάσει και συμφωνώ με τη</string>
+    <string name="signup_policy_button_text">Πολιτική Απορήτου</string>
+    <string name="signup_cta_button_text">Εγγραφή</string>
+    <string name="signup_already_user">Έχεις ήδη λογαριασμό?</string>
+    <string name="signup_login_btn_text">Είσοδος</string>
+    <string name="signup_warning_empty_field">Κάποιο από τα πεδία είναι κενό</string>
+    <string name="signup_invalid_name_field">Μη έγκυρο όνομα/επίθετο (Επιτέπονται μόνο λατινικοί και ελληνικοί χαρακτήρες)</string>
+    <string name="signup_invalid_phone_field">Μη έγκυρος αριθμός κινητού</string>
+
+    <!-- Validate Password Screen Strings-->
+    <string name="validate_message_text">Βάλε τον 6ψήφιο κωδικό σου</string>
+    <string name="validate_sent_password_btn_text">Αποστολή κωδικού με sms</string>
+    <string name="submit">Αποστολή</string>
+    <string name="verification">Επαλήθευση!</string>
+    <string name="verif_message">Βάλε τον 6-ψήφιο κωδικό για το</string>
+    <string name="resent_sms_message">Στάλθηκε ο κωδικός με sms στο κινητό σου</string>
+    <string name="server_error">Συγγνώμη ο διακομιστής μας αντιμετοπίζει ένα προβλημα αυτή τη στιγμή.
+        Κάνουμε το καλύτερο δυνατό για να το αποκαταστήσουμε</string>
+    <string name="wrong_password">Λυπόυμαστε λάθος κωδικός</string>
+    <string name="no_valid_password">Μή έγκυρος κωδικός</string>
+
+
+    <!-- Main Screen Strings-->
+    <string name="main_top_title_pickup">Επέλεξε Τοποθεσία Επιβίβασης</string>
+    <string name="main_top_title_dropoff">Επέλεξε Τοποθεσία Προορισμού</string>
+    <string name="main_top_title_payment">Επέλεξε Τρόπο Πηρωμής</string>
+    <string name="main_top_title_searching">Αναζήτηση πλησιέστερου οχήματος</string>
+    <string name="main_top_title_driverComing">Ο οδηγός είναι καθ΄οδόν</string>
+    <string name="main_cta_button_pickup">θέλω να πάω</string>
+    <string name="main_cta_button_dropoff">Θα πληρώσω </string>
+    <string name="main_cta_button_callTaxi">Βρές μου ένα Pick</string>
+    <string name="main_cta_button_cancel">Ακύρωση</string>
+    <string name="main_searching_loading_message">Αναζήτηση Pick...</string>
+    <string name="main_minutes">λπτ</string>
+    <string name="main_where_to_go">Που θές να πάς?</string>
+    <string name="main_pay_with">Πληρωμή με:</string>
+    <string name="main_cash">Μετρητά</string>
+    <string name="main_card_dots_plus_numbers">•••• %1$s</string>
+    <string name="main_airport_name">Διεθνής Αερολιμένας Αθηνών(ATH)</string>
+    <string name="main_arriveat_message">Φτάνει σε %1$s λεπτά</string>
+    <string name="main_coming_driver_rating">Βαθμολογία %1ds</string>
+    <string name="main_call_coming_driver">Μίλα με οδηγό</string>
+
+
+    <!-- Global Strings-->
+    <string name="mobile_phone_number_hint">Αριθμός τηλεφώνου</string>
+    <string name="greece_phone_code">+30</string>
+    <string name="logo_imageview_content_description">logo_image</string>
+    <string name="button_create_account_text">Δημιουργία</string>
+    <string name="ok">Εντάξει</string>
+
+    <!-- Search Fragment -->
+    <string name="searching">Αναζήτηση</string>
+    <string name="searching_hint">Γράψε μία οδό</string>
+
+    <!-- Ride Options -->
+    <string name="ride_options_proceed_btn_text">Βρές ένα Pick</string>
+    <string name="payment">Πληρωμή</string>
+    <string name="cash">Μετρητά</string>
+    <string name="credit_card">Πιστωτική Κάρτα</string>
+    <string name="paypal">Paypal</string>
+    <string name="ride_options_pick_me_from">Παραλαβή από :</string>
+    <string name="ride_options_destination">Προορισμός :</string>
+    <string name="choose_payment_method">Επέλεξε πώς θέλεις να πληρώσεις τη διαδρομή σου</string>
+
+    <!-- Credit Cards  -->
+    <string name="save_credit_card">Αποθήκευση Κάρτας</string>
+    <string name="empty_credit_card_list_message">Δεν υπάρχουν αποθηκευμένες κάρτες</string>
+
+<!--    &lt;!&ndash; Handle The Ride Activity&ndash;&gt;-->
+<!--    <string name="Empty_Driver_Name">ΟνομαΟδηγ</string>-->
+<!--    <string name="ok_rides">Ολοκληρωμένες Διαδρομές</string>-->
+<!--    <string name="average_score">Μέση βαθμολογία</string>-->
+<!--    <string name="driving_score">Οδήγηση</string>-->
+<!--    <string name="attitude_score">Συμπεριφορά</string>-->
+<!--    <string name="car_score">Κατάσταση οχήματος</string>-->
+<!--    <string name="car_model">Όχημα</string>-->
+<!--    <string name="car_year">Έτος κυκλοφορίας</string>-->
+<!--    <string name="cancel_the_ride">Ακυρωση</string>-->
+<!--    <string name="onBoard">Επιβίβαση</string>-->
+<!--    <string name="driver_is_on_the_way">Ο οδηγός σου είναι καθ΄οδόν</string>-->
+<!--    <string name="driver_has_arrived">Ο οδηγός σου έφτασε και σε περιμένει!</string>-->
+
+<!--    End Ride-->
+    <string name="end_ride_trip_id">Διαδρομή ID:</string>
+    <string name="end_ride_total">Σύνολο</string>
+    <string name="end_ride_rate_the_captain">Αξιολόγησε τον οδηγό σου</string>
+    <string name="end_ride_report_captain">Ανέφερε τον οδηγό</string>
+    <string name="end_ride_price">€%1$2f</string>
+
+
+
+    <!-- NumPad Numbers  -->
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+</resources>
