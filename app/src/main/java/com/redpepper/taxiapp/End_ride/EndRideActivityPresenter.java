@@ -1,5 +1,6 @@
 package com.redpepper.taxiapp.End_ride;
 
+import com.redpepper.taxiapp.Http.ResponseModels.AcceptedDriverInfoResponse;
 import com.redpepper.taxiapp.Http.ResponseModels.RideResponse;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -40,9 +41,7 @@ public class EndRideActivityPresenter implements EndRideActivityMVP.Presenter {
             @Override
             public void onSuccess(@NonNull Response<RideResponse> rideResponse) {
 
-                RideResponse rideInfo= rideResponse.body();
-
-                view.setRideInfo(rideInfo);
+                view.setRideInfo(rideResponse.body());
 
             }
 
@@ -52,6 +51,26 @@ public class EndRideActivityPresenter implements EndRideActivityMVP.Presenter {
                 e.printStackTrace();
             }
         }));
+    }
+
+    @Override
+    public void getDriverInfo(String driverId) {
+        subscription.add(
+                model.getDriverInfo(driverId)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(new DisposableSingleObserver<Response<AcceptedDriverInfoResponse>>(){
+                    @Override
+                    public void onSuccess(@NonNull Response<AcceptedDriverInfoResponse> response) {
+                        view.setDriverInfo(response.body());
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+
+                    }
+                })
+        );
     }
 
     @Override

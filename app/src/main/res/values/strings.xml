@@ -87,7 +87,7 @@
     <string name="main_card_dots_plus_numbers">•••• %1$s</string>
     <string name="main_airport_name">Διεθνής Αερολιμένας Αθηνών(ATH)</string>
     <string name="main_arriveat_message">Φτάνει σε %1$s λεπτά</string>
-    <string name="main_coming_driver_rating">Βαθμολογία %1ds</string>
+    <string name="main_coming_driver_rating">Βαθμολογία %1d</string>
     <string name="main_call_coming_driver">Μίλα με οδηγό</string>
 
 
@@ -135,7 +135,9 @@
     <string name="end_ride_total">Σύνολο</string>
     <string name="end_ride_rate_the_captain">Αξιολόγησε τον οδηγό σου</string>
     <string name="end_ride_report_captain">Ανέφερε τον οδηγό</string>
-    <string name="end_ride_price">€%1$2f</string>
+    <string name="end_ride_price">€%1$.2f</string>
+    <string name="end_ride_car_make_model">%1$s %2$s</string>
+
 
 
 

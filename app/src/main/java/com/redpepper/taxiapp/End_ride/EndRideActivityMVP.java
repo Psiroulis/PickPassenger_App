@@ -1,6 +1,7 @@
 package com.redpepper.taxiapp.End_ride;
 
 
+import com.redpepper.taxiapp.Http.ResponseModels.AcceptedDriverInfoResponse;
 import com.redpepper.taxiapp.Http.ResponseModels.RideResponse;
 
 import io.reactivex.Single;
@@ -10,16 +11,22 @@ public interface EndRideActivityMVP {
 
     interface Model{
         Single<Response<RideResponse>> getRideInfo(int rideId);
+        Single<Response<AcceptedDriverInfoResponse>> getDriverInfo(String driverId);
     }
 
     interface View{
         void setRideInfo(RideResponse rideInfo);
+
+        void setDriverInfo(AcceptedDriverInfoResponse driverInfo);
+
     }
 
     interface Presenter{
         void setView(EndRideActivityMVP.View view);
 
         void getRideInfo(int rideId);
+
+        void getDriverInfo(String driverId);
 
         void rxUnsubscribe();
     }

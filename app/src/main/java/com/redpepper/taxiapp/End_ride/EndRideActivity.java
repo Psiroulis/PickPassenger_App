@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.redpepper.taxiapp.Http.ResponseModels.AcceptedDriverInfoResponse;
 import com.redpepper.taxiapp.Http.ResponseModels.RideResponse;
 import com.redpepper.taxiapp.R;
 import com.redpepper.taxiapp.Root.App;
@@ -49,17 +50,48 @@ public class EndRideActivity extends Activity implements EndRideActivityMVP.View
 
         presenter.getRideInfo(rideId);
 
-
+        presenter.getDriverInfo(driverId);
 
     }
 
     @Override
     public void setRideInfo(RideResponse rideInfo) {
-
         binding.endRideTripIdTxt.setText(String.valueOf(rideInfo.getId()));
-        binding.endRidePickAddressLine1.setText(rideInfo.getPickupAddress());
-        binding.endRideDestAddressLine1.setText(rideInfo.getDestinationAddress());
+
+        String[] pickAddArr = rideInfo.getPickupAddress().split(",");
+
+        if(pickAddArr.length > 1){
+
+            binding.endRidePickAddressLine1.setText(pickAddArr[0]);
+
+            binding.endRidePickAddressLine2.setText(pickAddArr[1] + "," + pickAddArr[2]);
+
+        }else{
+
+            binding.endRidePickAddressLine1.setText(rideInfo.getPickupAddress());
+        }
+
+        String[] destAddArr = rideInfo.getDestinationAddress().split(",");
+
+        if(destAddArr.length > 1){
+
+            binding.endRideDestAddressLine1.setText(destAddArr[0]);
+
+            binding.endRideDestAddressLine2.setText(destAddArr[1]+","+ destAddArr[2]);
+
+        }else{
+
+            binding.endRideDestAddressLine1.setText(rideInfo.getDestinationAddress());
+        }
 
         binding.endRideFareTxt.setText(getString(R.string.end_ride_price,rideInfo.getPaymentAmount()));
+    }
+
+    @Override
+    public void setDriverInfo(AcceptedDriverInfoResponse driverInfo) {
+        binding.endRideDriverName.setText(driverInfo.getName());
+        binding.endRideDriverCurrentRateTxt.setText(getString(R.string.main_coming_driver_rating,4));
+        binding.endRideDriverPlateTxt.setText(driverInfo.getPlate());
+        binding.endRideDriverMakeModelTxt.setText(getString(R.string.end_ride_car_make_model,driverInfo.getMake(),driverInfo.getModel()));
     }
 }

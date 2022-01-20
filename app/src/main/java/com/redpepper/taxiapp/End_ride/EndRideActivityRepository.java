@@ -2,6 +2,7 @@ package com.redpepper.taxiapp.End_ride;
 
 import android.content.SharedPreferences;
 
+import com.redpepper.taxiapp.Http.ResponseModels.AcceptedDriverInfoResponse;
 import com.redpepper.taxiapp.Http.ResponseModels.RideResponse;
 import com.redpepper.taxiapp.Http.apiservices.PassengerApiService;
 
@@ -24,5 +25,8 @@ public class EndRideActivityRepository implements Repository {
         return apiService.getRideInfo(token,rideId);
     }
 
-
+    @Override
+    public Single<Response<AcceptedDriverInfoResponse>> getDriverInfo(String driverId) {
+        return apiService.getAcceptedDriverInfos(token,driverId);
+    }
 }

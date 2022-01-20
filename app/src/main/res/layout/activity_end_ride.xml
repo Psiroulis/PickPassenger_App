@@ -211,8 +211,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/endRideDriverImg"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginTop="8dp"
         android:src="@drawable/ic_launcher_background"
         app:civ_border_color="#FFFFFF"
@@ -268,7 +268,7 @@
         android:id="@+id/linearLayout5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/bg_white_cut_corners"
         android:divider="@drawable/ver_divider"
         android:dividerPadding="1dp"
@@ -322,7 +322,7 @@
         android:id="@+id/endRideReportButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/inter_bold"
         android:text="@string/end_ride_report_captain"
