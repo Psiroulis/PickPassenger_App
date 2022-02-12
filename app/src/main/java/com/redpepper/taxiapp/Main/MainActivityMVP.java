@@ -63,6 +63,8 @@ public interface MainActivityMVP {
         void updateDriverLocationOnMap(LatLng driverLocation);
 
         void rideInfoUpdated(String driverId);
+
+        void showNoDriverInRangeMessage();
     }
 
     interface Presenter{

@@ -407,6 +407,10 @@ public class MainActivity extends FragmentActivity implements
         LatLng cameraLocation = new LatLng(mMap.getCameraPosition().target.latitude,
                 mMap.getCameraPosition().target.longitude);
 
+        if(mapFunctionality == PICKUP){
+            presenter.getNearestDriverArrivalTime(pickUpLocation.getLatitude(), pickUpLocation.getLongitude());
+        }
+
         if (PolyUtil.containsLocation(cameraLocation, airportPoints, true)) {
 
             if (mapFunctionality == PICKUP) {
@@ -414,8 +418,6 @@ public class MainActivity extends FragmentActivity implements
                 binding.mainPickupAddressTxt.setText(getResources().getString(R.string.main_airport_name));
 
                 pickUpFullAddress = getResources().getString(R.string.main_airport_name);
-
-                presenter.getNearestDriverArrivalTime(pickUpLocation.getLatitude(), pickUpLocation.getLongitude());
 
             } else {
 
@@ -439,8 +441,6 @@ public class MainActivity extends FragmentActivity implements
 
                 pickUpFullAddress = fullAddress;
 
-                presenter.getNearestDriverArrivalTime(pickUpLocation.getLatitude(), pickUpLocation.getLongitude());
-
             } else {
 
                 if (destinationAddressText != null) {
@@ -456,7 +456,18 @@ public class MainActivity extends FragmentActivity implements
             }
         }
 
+
+
     }
+
+    @Override
+    public void showNoDriverInRangeMessage() {
+        binding.mainClosestDriverTimeTxtMarker.setText("-");
+
+        binding.mainClosestDriverTimeTxtBottom.setText(getResources().getString(R.string.main_no_driver_in_range));
+    }
+
+
 
     @Override
     public void showDirectionsOnMap(List<String> polyLines) {
@@ -613,15 +624,24 @@ public class MainActivity extends FragmentActivity implements
 
             } else if (mapFunctionality == DESTINATION) {
 
-                Log.d("blepo", "Going To Payment");
-                Log.d("blepo", "PickUp Full Address: " + pickUpFullAddress);
-                Log.d("blepo", "PickUp Coords-> Lat: " + pickUpLocation.getLatitude() + " Lng: " + pickUpLocation.getLongitude());
-                Log.d("blepo", "Destination Full Address: " + destinationFullAddress);
-                Log.d("blepo", "Destination Coords-> Lat: " + destinationLocation.getLatitude() + " Lng: " + destinationLocation.getLongitude());
+                if(destinationAddressText.getText().toString().equalsIgnoreCase(getResources().getString(R.string.main_where_to_go))){
 
-                makeUiChangesForPaymentChoice();
+                    destinationAddressText.setTextColor(Color.RED);
 
-                mapFunctionality = PAYMENT;
+                }else{
+                    Log.d("blepo",destinationAddressText.getText().toString());
+                    Log.d("blepo", "Going To Payment");
+                    Log.d("blepo", "PickUp Full Address: " + pickUpFullAddress);
+                    Log.d("blepo", "PickUp Coords-> Lat: " + pickUpLocation.getLatitude() + " Lng: " + pickUpLocation.getLongitude());
+                    Log.d("blepo", "Destination Full Address: " + destinationFullAddress);
+                    Log.d("blepo", "Destination Coords-> Lat: " + destinationLocation.getLatitude() + " Lng: " + destinationLocation.getLongitude());
+
+                    makeUiChangesForPaymentChoice();
+
+                    mapFunctionality = PAYMENT;
+                }
+
+
 
             } else if (mapFunctionality == PAYMENT) {
 

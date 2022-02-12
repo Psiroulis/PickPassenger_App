@@ -8,6 +8,7 @@ import android.view.WindowManager;
 
 import com.redpepper.taxiapp.Http.ResponseModels.AcceptedDriverInfoResponse;
 import com.redpepper.taxiapp.Http.ResponseModels.RideResponse;
+import com.redpepper.taxiapp.Main.MainActivity;
 import com.redpepper.taxiapp.R;
 import com.redpepper.taxiapp.Root.App;
 import com.redpepper.taxiapp.databinding.ActivityEndRideBinding;
@@ -52,6 +53,12 @@ public class EndRideActivity extends Activity implements EndRideActivityMVP.View
 
         presenter.getDriverInfo(driverId);
 
+        binding.endRideRatingbar.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> {
+
+            presenter.sendDriverRating(rating);
+
+        });
+
     }
 
     @Override
@@ -93,5 +100,12 @@ public class EndRideActivity extends Activity implements EndRideActivityMVP.View
         binding.endRideDriverCurrentRateTxt.setText(getString(R.string.main_coming_driver_rating,4));
         binding.endRideDriverPlateTxt.setText(driverInfo.getPlate());
         binding.endRideDriverMakeModelTxt.setText(getString(R.string.end_ride_car_make_model,driverInfo.getMake(),driverInfo.getModel()));
+    }
+
+    @Override
+    public void moveToMainScreen() {
+        Intent intent = new Intent(EndRideActivity.this, MainActivity.class);
+        this.finish();
+        startActivity(intent);
     }
 }

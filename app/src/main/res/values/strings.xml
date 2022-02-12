@@ -87,6 +87,7 @@
     <string name="main_card_dots_plus_numbers">•••• %1$s</string>
     <string name="main_airport_name">Διεθνής Αερολιμένας Αθηνών(ATH)</string>
     <string name="main_arriveat_message">Φτάνει σε %1$s λεπτά</string>
+    <string name="main_no_driver_in_range">Δεν υπάρχει διαθέμος οδηγός</string>
     <string name="main_coming_driver_rating">Βαθμολογία %1d</string>
     <string name="main_call_coming_driver">Μίλα με οδηγό</string>
 

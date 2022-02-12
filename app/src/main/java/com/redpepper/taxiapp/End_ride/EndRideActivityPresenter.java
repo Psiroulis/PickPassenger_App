@@ -74,6 +74,11 @@ public class EndRideActivityPresenter implements EndRideActivityMVP.Presenter {
     }
 
     @Override
+    public void sendDriverRating(float rating) {
+        view.moveToMainScreen();
+    }
+
+    @Override
     public void rxUnsubscribe() {
         if(subscription!=null){
             if(!subscription.isDisposed()){

@@ -19,6 +19,8 @@ public interface EndRideActivityMVP {
 
         void setDriverInfo(AcceptedDriverInfoResponse driverInfo);
 
+        void moveToMainScreen();
+
     }
 
     interface Presenter{
@@ -27,6 +29,8 @@ public interface EndRideActivityMVP {
         void getRideInfo(int rideId);
 
         void getDriverInfo(String driverId);
+
+        void sendDriverRating(float rating);
 
         void rxUnsubscribe();
     }

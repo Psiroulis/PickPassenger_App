@@ -158,6 +158,7 @@ public class MainActivityPresenter implements MainActivityMVP.Presenter {
 
                             Log.e("blepo", "Error message:" + response.body().getMessage());
 
+
                         }
                     }
 
@@ -187,6 +188,8 @@ public class MainActivityPresenter implements MainActivityMVP.Presenter {
                                 }else{
 
                                     Log.e("blepo", "Error message:" + nearestDriverTimeResponseResponse.body().getMessage());
+
+                                    view.showNoDriverInRangeMessage();
 
                                 }
 
