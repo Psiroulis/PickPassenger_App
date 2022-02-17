@@ -139,6 +139,12 @@
     <string name="end_ride_price">€%1$.2f</string>
     <string name="end_ride_car_make_model">%1$s %2$s</string>
 
+<!--    Report Driver-->
+    <string name="report_driver_title">Αναφορά</string>
+    <string name="report_driver_submit_text">Αποστολή</string>
+    <string name="report_driver_submit_descr_hint">Πές μας τι έγινε...</string>
+
+
 
 
 

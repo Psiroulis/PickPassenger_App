@@ -8,6 +8,7 @@
  import com.redpepper.taxiapp.Http.PostModels.FoursquareApiPost;
  import com.redpepper.taxiapp.Http.PostModels.NearestDriverTimePost;
  import com.redpepper.taxiapp.Http.PostModels.RecentPlacePost;
+ import com.redpepper.taxiapp.Http.PostModels.Reports.ReportPost;
  import com.redpepper.taxiapp.Http.PostModels.ResentPasswordSmsPost;
  import com.redpepper.taxiapp.Http.PostModels.RidePost;
  import com.redpepper.taxiapp.Http.PostModels.SignUpPost;
@@ -22,6 +23,8 @@
  import com.redpepper.taxiapp.Http.ResponseModels.DirectionPathResponse;
  import com.redpepper.taxiapp.Http.ResponseModels.FoursquarePlacesResponse;
  import com.redpepper.taxiapp.Http.ResponseModels.NearestDriverTimeResponse;
+ import com.redpepper.taxiapp.Http.ResponseModels.Reports.ReportResponse;
+ import com.redpepper.taxiapp.Http.ResponseModels.Reports.ReportTypesResponse;
  import com.redpepper.taxiapp.Http.ResponseModels.RideResponse;
  import com.redpepper.taxiapp.Http.ResponseModels.SimpleResponse;
  import com.redpepper.taxiapp.Http.ResponseModels.TokenResponse;
@@ -126,6 +129,9 @@
     @GET("api/sendridetodrivers")
     Single<Response<SimpleResponse>> sendRideToDrivers(@Header("Authorization") String token, @Query("lat") double pick_up_lat, @Query("lng") double pick_up_lng);
 
+    @POST("api/addratetoride/{id}")
+    Single<Response<SimpleResponse>> addRideRating(@Header("Authorization") String token, @Path("id") int id, @Query("rating") int rating);
+
     @GET("api/rides/{id}")
     Single<Response<RideResponse>> getRideInfo(@Header("Authorization") String token, @Path("id") int id);
 
@@ -136,6 +142,12 @@
     Single<Response<ComingDriverLocationResponse>> getComingDriverLocation(@Header("Authorization") String token, @Query("driver_id") String driverId);
 
     @POST("api/comingdrivertime")
-     Single<Response<NearestDriverTimeResponse>> getAcceptedDriverArrivalTime(@Header("Authorization") String token, @Body AcceptedDriverArrivalTimePost post);
+    Single<Response<NearestDriverTimeResponse>> getAcceptedDriverArrivalTime(@Header("Authorization") String token, @Body AcceptedDriverArrivalTimePost post);
+
+    @GET("api/report-types")
+    Single<Response<ReportTypesResponse>> getAllReportTypes();
+
+    @POST("api/driver-reports")
+    Single<Response<ReportResponse>> createNewReport(@Header("Authorization") String token, @Body ReportPost post);
  }
 

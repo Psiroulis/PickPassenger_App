@@ -7,6 +7,7 @@ import com.redpepper.taxiapp.Http.ApiModule;
 import com.redpepper.taxiapp.Login.LoginActivityModule;
 import com.redpepper.taxiapp.Main.MainActivityModule;
 import com.redpepper.taxiapp.Payments.PaymentMethodFragmentModule;
+import com.redpepper.taxiapp.RideReports.ReportsFragmentModule;
 import com.redpepper.taxiapp.Search_locations.SearchLocationsModule;
 import com.redpepper.taxiapp.Signup.SignUpActivityModule;
 import com.redpepper.taxiapp.Splash.SplashActivityModule;
@@ -31,6 +32,7 @@ public class App extends Application {
                 .searchLocationsModule(new SearchLocationsModule())
                 .paymentMethodFragmentModule(new PaymentMethodFragmentModule())
                 .endRideActivityModule(new EndRideActivityModule())
+                .reportsFragmentModule(new ReportsFragmentModule())
                 .build();
 
         component.inject(this);

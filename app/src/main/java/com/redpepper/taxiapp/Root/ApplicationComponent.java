@@ -11,6 +11,8 @@ import com.redpepper.taxiapp.Main.MainActivity;
 import com.redpepper.taxiapp.Main.MainActivityModule;
 import com.redpepper.taxiapp.Payments.PaymentMethodFragment;
 import com.redpepper.taxiapp.Payments.PaymentMethodFragmentModule;
+import com.redpepper.taxiapp.RideReports.ReportFragment;
+import com.redpepper.taxiapp.RideReports.ReportsFragmentModule;
 import com.redpepper.taxiapp.Search_locations.SearchLocationFragment;
 import com.redpepper.taxiapp.Search_locations.SearchLocationsModule;
 import com.redpepper.taxiapp.Signup.SignUpActivity;
@@ -35,7 +37,8 @@ import dagger.Component;
         ValidatePasswordActivityModule.class,
         SearchLocationsModule.class,
         PaymentMethodFragmentModule.class,
-        EndRideActivityModule.class
+        EndRideActivityModule.class,
+        ReportsFragmentModule.class,
 })
 
 public interface ApplicationComponent {
@@ -57,4 +60,6 @@ public interface ApplicationComponent {
     void inject (PaymentMethodFragment target);
 
     void inject (EndRideActivity target);
+
+    void inject (ReportFragment target);
 }

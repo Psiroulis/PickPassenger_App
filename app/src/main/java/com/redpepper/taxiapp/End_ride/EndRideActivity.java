@@ -1,24 +1,29 @@
 package com.redpepper.taxiapp.End_ride;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+
 import com.redpepper.taxiapp.Http.ResponseModels.AcceptedDriverInfoResponse;
 import com.redpepper.taxiapp.Http.ResponseModels.RideResponse;
 import com.redpepper.taxiapp.Main.MainActivity;
 import com.redpepper.taxiapp.R;
+import com.redpepper.taxiapp.RideReports.ReportFragment;
 import com.redpepper.taxiapp.Root.App;
 import com.redpepper.taxiapp.databinding.ActivityEndRideBinding;
 import com.squareup.picasso.Picasso;
 
 import javax.inject.Inject;
 
-public class EndRideActivity extends Activity implements EndRideActivityMVP.View  {
+public class EndRideActivity extends FragmentActivity implements EndRideActivityMVP.View  {
 
-    ActivityEndRideBinding binding;
+    private ActivityEndRideBinding binding;
+
+    private FragmentManager fragManager;
 
     @Inject
     EndRideActivityMVP.Presenter presenter;
@@ -53,9 +58,30 @@ public class EndRideActivity extends Activity implements EndRideActivityMVP.View
 
         presenter.getDriverInfo(driverId);
 
-        binding.endRideRatingbar.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> {
+        binding.endRideRatingbar.setOnRatingBarChangeListener((ratingBar, rating, fromUser) ->
 
-            presenter.sendDriverRating(rating);
+            presenter.sendDriverRating(rideId, rating)
+
+        );
+
+        binding.endRideReportButton.setOnClickListener((v) ->{
+
+            fragManager = getSupportFragmentManager();
+
+            ReportFragment reportFragment = new ReportFragment();
+
+            Bundle bundle =new Bundle();
+
+            bundle.putInt("rideId",rideId);
+
+            reportFragment.setArguments(bundle);
+
+            fragManager.beginTransaction()
+                    .setCustomAnimations(R.anim.enter_from_top, R.anim.exit_from_top)
+                    .replace(binding.endRideFragmentContainer.getId(), reportFragment, "reportsFragment")
+                    .setReorderingAllowed(true)
+                    .addToBackStack(null)
+                    .commit();
 
         });
 

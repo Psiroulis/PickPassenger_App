@@ -2,6 +2,7 @@ package com.redpepper.taxiapp.End_ride;
 
 import com.redpepper.taxiapp.Http.ResponseModels.AcceptedDriverInfoResponse;
 import com.redpepper.taxiapp.Http.ResponseModels.RideResponse;
+import com.redpepper.taxiapp.Http.ResponseModels.SimpleResponse;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -74,8 +75,24 @@ public class EndRideActivityPresenter implements EndRideActivityMVP.Presenter {
     }
 
     @Override
-    public void sendDriverRating(float rating) {
-        view.moveToMainScreen();
+    public void sendDriverRating(int rideId, float rating) {
+        subscription.add(
+                model.sendRideRating(rideId,rating)
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribeWith(new DisposableSingleObserver<Response<SimpleResponse>>(){
+                            @Override
+                            public void onSuccess(@NonNull Response<SimpleResponse> response) {
+                                view.moveToMainScreen();
+                            }
+
+                            @Override
+                            public void onError(@NonNull Throwable e) {
+
+                            }
+                        })
+        );
+
     }
 
     @Override

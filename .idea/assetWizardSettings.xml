@@ -19,8 +19,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_rating_star_empty" />
-                            <entry key="sourceFile" value="D:\pick_graphps_from_xd\rating_star_empty.svg" />
+                            <entry key="outputName" value="ic_right_arrow" />
+                            <entry key="sourceFile" value="D:\pick_graphps_from_xd\right_arrow.svg" />
                           </map>
                         </option>
                       </PersistentState>
